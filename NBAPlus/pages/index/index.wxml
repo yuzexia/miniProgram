@@ -7,8 +7,8 @@
     </view>
     -->
   <ul class="con-lists">
-    <li wx:for="{{toDoList}}" wx:key="text" class="con-list">
-      <checkbox-group class="list-box-group" bindchange="checkboxChange" data-index="{{index}}">
+    <li wx:for="{{toDoList}}" wx:key="text" class="con-list" bindlongtap="removeList">
+      <checkbox-group class="list-box-group" bindchange="checkboxChange" data-index="{{index}}" data-checked="{{item.checked}}">
         <checkbox class="group-checkbox" value="{{item.text}}" checked="{{item.checked}}" data-index="{{index}}"/>
         <label class="group-label">
           {{item.text}}
@@ -19,7 +19,7 @@
   </ul>
   <p class="done-title" wx:if="{{toDoneList.length}}">已完成</p>
   <ul class="con-lists done-list">
-    <li wx:for="{{toDoneList}}" wx:key="text" class="con-list done-list">
+    <li wx:for="{{toDoneList}}" wx:key="text" class="con-list done-list" bindlongtap="removeList"  data-checked="{{item.checked}}">
       <checkbox-group class="list-box-group" bindchange="checkboxChange" data-index="{{index}}">
         <checkbox class="group-checkbox" value="{{item.text}}" checked="{{item.checked}}"/>
         <label class="group-label">
