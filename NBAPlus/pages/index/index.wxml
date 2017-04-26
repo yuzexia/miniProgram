@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+    <!--
+    <view  bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    -->
+  <ul class="con-lists">
+    <li wx:for="{{toDoList}}" wx:key="text" class="con-list">
+      <checkbox-group class="list-box-group" bindchange="checkboxChange" data-index="{{index}}">
+        <checkbox class="group-checkbox" value="{{item.text}}" checked="{{item.checked}}" data-index="{{index}}"/>
+        <label class="group-label">
+          {{item.text}}
+        </label>
+      </checkbox-group>
+      <!--{{item.text}}-->
+    </li>
+  </ul>
+  <p class="done-title" wx:if="{{toDoneList.length}}">已完成</p>
+  <ul class="con-lists done-list">
+    <li wx:for="{{toDoneList}}" wx:key="text" class="con-list done-list">
+      <checkbox-group class="list-box-group" bindchange="checkboxChange" data-index="{{index}}">
+        <checkbox class="group-checkbox" value="{{item.text}}" checked="{{item.checked}}"/>
+        <label class="group-label">
+          {{item.text}}
+        </label>
+      </checkbox-group>
+    </li>
+  </ul>
+
+  <!--<button type="primary" class="click-btn" bindtap="clickBtn">click me!</button>-->
+  <view class="section bottom-section">
+    <input type="text" placeholder="准备做什么？" class="text-input" bindinput="taskInput" value="{{task}}"/>
+    <button type="primary" class="text-btn" bindtap="sendTask">send</button>
+  </view>
+  <!--
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  -->
+
+</view>
