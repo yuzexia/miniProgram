@@ -87,19 +87,19 @@ Page({
         checked = e.target.dataset.checked;
     console.log(this);
     console.log(e.target)
-    console.log(e.target.dataset.index)
+    console.log(e.target.dataset.index,e.target.dataset.checked);
     console.log(index, checked)
-    // if(checked){
-    //   this.data.toDoneList.splice(index,1);
-    //   this.setData({
-    //     toDoneList:this.data.toDoneList
-    //   })
-    // } else{
-    //   this.data.toDoList.splice(index,1);
-    //   this.setData({
-    //     toDoList:this.data.toDoList
-    //   })
-    // }
+    if(checked){
+      this.data.toDoneList.splice(index,1);
+      this.setData({
+        toDoneList:this.data.toDoneList
+      })
+    } else{
+      this.data.toDoList.splice(index,1);
+      this.setData({
+        toDoList:this.data.toDoList
+      })
+    }
   },
   onShareAppMessage: function () {
     return {
