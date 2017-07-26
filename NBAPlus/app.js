@@ -7,13 +7,13 @@ App({
     wx.setStorageSync('logs', logs)
   },
   onShow:function(){
-    console.log('onShow',this);
-    console.log(wx.getStorageSync('todo'))
-    console.log(wx.getStorageSync('todone'))
+    // console.log('onShow',this);
+    // console.log(wx.getStorageSync('todo'))
+    // console.log(wx.getStorageSync('todone'))
     this.globalData.todo = wx.getStorageSync('todo');
   },
   onHide:function(){
-    console.log('onHide',this);
+    // console.log('onHide',this);
     // wx.setStorage('toDoList':)
   },
   getUserInfo:function(cb){

@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="container">
 
-    <view  bindtap="bindViewTap" class="userinfo">
-      <!--<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>-->
+    <!--<view  bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </view>
+    </view>-->
 
   <ul class="con-lists">
     <li wx:for="{{toDoList}}" wx:key="text" class="con-list" bindlongtap="removeList">

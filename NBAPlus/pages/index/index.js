@@ -38,7 +38,7 @@ Page({
     })
   },
   onHide:function(){
-    console.log('index.html onHide');
+    // console.log('index.html onHide');
     wx.setStorageSync('todo',this.data.toDoList);
     wx.setStorageSync('todone',this.data.toDoneList);
   },
@@ -65,7 +65,7 @@ Page({
   checkboxChange:function(e){
     var index = e.target.dataset.index;
     var value = e.detail.value[0];
-    console.log(index,e.target.dataset.index,value);
+    // console.log(index,e.target.dataset.index,value);
     if(value){
       this.data.toDoList[index].checked = true;
       this.data.toDoneList.push(this.data.toDoList[index]);
@@ -79,16 +79,16 @@ Page({
     }
     this.setData({toDoneList:this.data.toDoneList});
     this.setData({toDoList:this.data.toDoList});
-    console.log(this.data)
+    // console.log(this.data)
     // console.log('checkbox发生Change事件，携带value值为：'+ e.detail.value)
   },
   removeList:function(e){
     var index = e.target.dataset.index,
         checked = e.target.dataset.checked;
-    console.log(this);
-    console.log(e.target)
-    console.log(e.target.dataset.index,e.target.dataset.checked);
-    console.log(index, checked)
+    // console.log(this);
+    // console.log(e.target)
+    // console.log(e.target.dataset.index,e.target.dataset.checked);
+    // console.log(index, checked)
     if(checked){
       this.data.toDoneList.splice(index,1);
       this.setData({
